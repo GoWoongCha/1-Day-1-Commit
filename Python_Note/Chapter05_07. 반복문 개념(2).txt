@@ -1,0 +1,29 @@
+Chapter05_07. 반복문 기본개념(2)
+
+#학습목표
+1. while 사용법
+2. 무한루프
+3. break
+
+#while 사용법
+[초기식]
+while 조건식:
+	반족할 명령
+	증감식
+
+i = 0
+while i < 10:
+	print(i, "번째 다짐, 나는 할 수 있다!")
+	i += 1 #복합할당연산자 - Chpater 04_01. 연산 맨 마지막 파트 참고
+
+#무한루프와 break
+While True: #불리언 자료형
+	반복할 명령
+	if 조건식:
+	break -> 가장 가까운 반복문을 탈출시켜주는 명령어 #반복문도 중첩이 될 수 있다!
+
+EX) while True:
+	x = input("종료하려면 exit을 입력하세요 >>> ")
+	if x == "exit":
+	break
+
