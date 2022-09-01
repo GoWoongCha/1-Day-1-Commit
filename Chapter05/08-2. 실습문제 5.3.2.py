@@ -39,3 +39,7 @@ while True:
         break
     else:
         print("->다시 입력해주세요")
+
+# 만약 프로그램을 실행하는데 invalid syntax가 뜨면서 python syntax error near unexpected token ?
+# 라는 코드가 생성되면 현재 프로그램의 bash가 아니라  다른 터미널에서 프로그램이 실행되어 발생하는 문제일 수 있다.
+# 이런 경우에는 모든 터미널을 닫고 프로그램을 다시 실행하여 해결할 수 있다.
