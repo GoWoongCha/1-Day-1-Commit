@@ -1,3 +1,38 @@
-Chapter00_00. 파이썬 정리 양식
-
+Chapter08_02. 생성자
 #학습목표
+1. 생성자(__init__)함수
+2. self란?
+3. 속성 추가하기
+4. 메서드 추가하기
+
+#클래스와 객체의 개념
+클래스에는 속성과 메서드가 필요하다
+
+#속성 추가하기
+Monster 클래스에 속성을 추가해봅시다.
+
+class Monster:
+	def__init__(self, health, attack, speed):
+		self.health = health
+		self.attack = attack
+		self.speed = speed
+
+goblin = Monster(800, 120, 300)
+wolf = Monster(1500, 200, 350)
+
+#메서드 추가하기
+class Monster:
+	def__init__(self, health, attack, speed):
+		self.health = health
+		self.attack = attack
+		self.speed = speed
+	def decrease_health(self,num):
+		self.health -= num
+	def get_health(self):
+		return.self.health
+
+goblin = Monster(800, 120, 300)
+
+goblin.decrease_health(100) #체력 감소하기
+print(goblin.get_health()) #체력 가져오기
+

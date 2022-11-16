@@ -1,0 +1,29 @@
+Chapter08_03. 상속
+#학습목표
+1. 상속의 개념
+2. 상속 사용방법
+
+#상속의 개념
+부모클래스 & 자식클래스 #부모클래스의 속성과 메서드를 자식클래스가 가져오는 것
+
+#상속 사용방법
+[부모클래스 정의]
+class Monster:
+	def __init__(self, name, health, attack):
+		self.name = name
+		self.health = health
+		self.attack = attack
+	def move(self):
+		print("지상에서 이동하기")
+
+[자식클래스 정의]
+class Wolf(Monster):
+	pass #특정 코드 블럭을 구현하고 싶지 않을 때, 정의만 하고 싶을 때 사용
+
+class Shark(Monster):
+	def move(self): #메서드 오버라이딩: 메서드 재정의
+		print("헤엄치기")
+
+class Dragon(Monster):
+	def move(self):
+		print("날기")
