@@ -1,0 +1,3 @@
+import csv
+
+data = [DeprecationWarning]

@@ -1,0 +1,40 @@
+Chapter10_02. csv 파일 입출력
+#학습목표
+1. csv 파일이란?
+2. csv 파일 입출력 사용방법
+
+#csv 파일이란?
+csv(comma-separated values)
+데이터가 콤마로 구분된 텍스트 파일 형식
+
+student.csv
+이름,반,번호
+재석,1,20
+홍철,3,8
+형돈,5,32
+
+#csv 파일 입출력 사용방법
+[csv 파일 쓰기]
+import csv
+
+data = [
+	["이름", "반", "번호"],
+	["재석",1,20],
+	["홍철",3,8]
+	["형돈",5,32]
+]
+
+file = open("student.csv", "w")
+writer = csv.writer(file)
+for d in data:
+	wirter.writerow(d)
+file.close()
+
+[csv 파일 읽기]
+import csv
+
+file = open("student.csv", "r")
+reader = csv.reader(file)
+for d in reader:
+	print(d)
+file.close()

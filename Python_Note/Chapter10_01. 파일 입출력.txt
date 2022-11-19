@@ -1,0 +1,73 @@
+Chapter10_01. 파일 입출력
+#학습목표
+1. 파일 입출력을 사용하는 이유
+2. 파일 열기모드
+3. 파일쓰기, 추가하기, 읽기
+4. pickle 모듈
+5. with 구문
+
+#파일 입출력을 사용하는 이유
+1. 파일로부터 데이터를 읽어와서 프로그램에 사용하기 위해
+2. 프로그램에서 만든 데이터를 파일형태로 저장하기 위해
+
+#파일 열기 모드
+w : 쓰기 모드(write)
+a : 추가 모드(append)
+r : 읽기 모드(read)
+
+1. 파일 열기 -> 2. 파일 작업 -> 3. 파일 닫기
+
+#파일 쓰기
+파일객체 = open("파일이름, "파일모드")
+파일객체.write(데이터)
+파일객체.close()
+
+file = open("data.txt", "w")
+file.write("1. 스타트코딩과 함께 파이썬 공부")
+file.close()
+
+#파일 추가
+파일객체 = open("파일이름", "파일모드")
+파일객체.write(데이터)
+파일객체.close()
+
+file = open("data.txt", "a")
+file.write("2. 비전공자도 정말 쉽게 배울 수 있습니다.")
+file.close() #w와 a의 차이: w = "덮어쓰기", a = "이어쓰기"
+
+#파일 읽기
+파일객체 = open("파일이름", "파일모드")
+변수 = 파일객체.read()
+파일객체.close()
+
+file = open("data.txt", "r")
+data = file.read()
+file.close()
+
+#pickle 모듈
+[파일에 파이썬 객체 저장하기]
+import pickle
+data = {
+	"목표1" : "매일 팔굽혀 펴기 100회",
+	"목표2" : "매일 코딩 공부 1시간"
+	}
+file = open("data.pickle", "wb") #'pickle'은 'p/pic'로도 사용가능 #wb는 바이너리 모드
+pickle.dump(data, file)
+file.close()
+
+[파일로부터 파이썬 객체 읽기]
+import pickle
+file = open("data.pickle", "rb")
+data = pickle.load(file)
+print(data)
+file.close()
+
+#with 구문
+[with 구문 사용 X]
+file = open("data.txt", "r")
+data = file.read()
+file.close()
+
+[with 구문 사용 O]
+with open("data.txt", "r") as file:
+	data = file.read() # 'file.close()를 작성하지 않아도 자동으로 파일이 닫힘'
