@@ -1,0 +1,18 @@
+Chapter11_02. 예외만들기
+#학습목표
+1. raise 구문 사용법
+2. 예외 계층 구조
+3. 에러 만들기
+
+#raise 구문 사용법
+raise 예외("에러 메시지")
+
+raise Exception
+raise Exception("에러 메시지")
+
+#예외 계층 구조
+
+#에러 만들기
+class 예외(Exception):
+	def __init__(self):
+		super().__init__("에러 메시지")
